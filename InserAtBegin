@@ -1,0 +1,57 @@
+class DoublyLinkedList{
+    Node head;
+    Node tail;
+    
+    class Node{
+        int data;
+        Node next;
+        Node prev;
+        
+        
+         Node(int data){
+            
+        this.data=data;
+        
+        }
+    
+       Node(int data,Node next){
+            
+        this.data=data;
+        this.next=next;
+        
+        }
+       
+        
+    }
+        
+    
+   
+public void insertAtbegin(int data){
+    Node newNode = new Node(data);
+    
+    if(head!=null){
+        newNode.next=head;
+        head.prev=newNode;
+    }
+    head=newNode;
+}
+public void printAllNodes(){
+    Node temp=head;
+    
+    while(temp!=null){
+        System.out.print(temp.data+"-->");
+        temp=temp.next;
+    }
+    System.out.println();
+}
+	public static void main(String[] args) {
+	  DoublyLinkedList list=new DoublyLinkedList();
+	  list.insertAtbegin(1);
+	  list.insertAtbegin(2);
+	  list.insertAtbegin(3);
+	  list.insertAtbegin(4);
+	  
+	  list.printAllNodes();
+	  
+	}
+}
